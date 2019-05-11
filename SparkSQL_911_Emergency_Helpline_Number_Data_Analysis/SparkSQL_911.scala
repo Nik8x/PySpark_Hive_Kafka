@@ -13,7 +13,7 @@ val emergency_data = ehl1.map(x => x.split(",")).filter(x => x.length>=9).map(x 
 emergency_data.registerTempTable("emergency_911")
 
 // same steps for Zipcodes data
-val ehl2 = sc.textFile("/home/kiran/Downloads/zipcode/zipcode.csv")
+val ehl2 = sc.textFile("zipcode.csv")
 
 val header1 = ehl2.first()
 

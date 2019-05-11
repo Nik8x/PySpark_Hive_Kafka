@@ -17,7 +17,7 @@ val ehl2 = sc.textFile("zipcode.csv")
 
 val header1 = ehl2.first()
 
-val data3 = ehl2.filter(row => row != header1)
+val ehl3 = ehl2.filter(row => row != header1)
 
 case class zipcode(zip:String, city:String, state:String, latitude:String, longitude:String, timezone:String, dst:String)
 val zipcodes = ehl3.map(x => x.split(",")).map(x=> zipcode(x(0).replace("\"", ""), x(1).replace("\"", ""), x(2).replace("\"", ""), x(3), x(4), x(5), x(6))).toDF

@@ -1,6 +1,7 @@
 My work with 
 - Spark
   - PySpark
-  - Scala
+  - SparkSQL
+  - Python/Scala
 - Hive
 - Kafka

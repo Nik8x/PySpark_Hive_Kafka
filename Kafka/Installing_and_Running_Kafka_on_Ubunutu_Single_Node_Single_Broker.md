@@ -52,6 +52,7 @@ unzip now
 ```
 we need to run the kafka commands here, so remember this location -> cd /opt/kafka_2.11-0.9.0.0/
 
+#### 3. Starting Zookeeper
 Now go to zookeeper directory
 ```
 	cd /opt/zookeeper-3.4.6
@@ -75,8 +76,6 @@ syncLimit=2
 Save the file
 ```CTRL+X -> Y```
 
-
-#### 3. Starting Zookeeper
 After this process is complete, ZooKeeper will be started as a daemon automatically. By default, it will listen on port 2181.
 To make sure that it is working, connect to it via Telnet:
 ```
@@ -90,8 +89,7 @@ and press ENTER. If everything's fine, ZooKeeper will say ```imok``` and end the
 
 To start zookeeper do this in *1st terminal*
 ```
-	cd /opt
-	cd kafka_2.11-0.9.0.0
+	cd /opt/cd kafka_2.11-0.9.0.0
 ```
 Then we will see /opt/kafka.version$ 
 ```
@@ -116,7 +114,7 @@ then start zookeeper server
 #### 4. Starting Kakfa Server
 The next step is to configure the Kakfa server. 
 ```
- nano ~/kafka/config/server.properties
+ sudo nano /opt/kafka_2.11-0.9.0.0/config/server.properties
 ```
 By default, Kafka doesn't allow you to delete topics. To be able to delete topics, add the following line at the end of the file:
 ```
@@ -126,8 +124,7 @@ Since Kafka uses Zookeeper, we need to first start a Zookeeper server. We can us
 
 To start kafka do this in *2nd terminal*
 ```
-	cd /opt
-	cd kafka_2.11-0.9.0.0
+	cd /opt/kafka_2.11-0.9.0.0
 ```
 Then we will see /opt/kafka.version$
 ```
@@ -136,8 +133,7 @@ Then we will see /opt/kafka.version$
 
 #### 5. To create kafka topic do this in *3rd terminal*
 ```
-	cd /opt
-	cd kafka_2.11-0.9.0.0
+	cd /opt/kafka_2.11-0.9.0.0
 
 	bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1   --partitions 1 --topic Hello-Kafka
 ```
@@ -146,10 +142,9 @@ To start broker do this
 	bin/kafka-console-producer.sh --broker-list localhost:9092 --topic Hello-Kafka
 ```
 
-#### 6. To start kafka consumer do this in 4th terminal
+#### 6. To start kafka consumer do this in *4th terminal*
 ```
-	cd /opt
-	cd kafka_2.11-0.9.0.0
+	cd /opt/kafka_2.11-0.9.0.0
 
 	bin/kafka-console-consumer.sh --zookeeper localhost:2181 --topic Hello-Kafka -- whitelist Hello-Kafka
 ```

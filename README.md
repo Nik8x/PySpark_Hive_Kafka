@@ -5,3 +5,6 @@ My work with
   - Python/Scala
 - Hive
 - Kafka
+- HDFS
+- MySQL
+- Linux

@@ -1,9 +1,12 @@
-Setup the proper path for sql in path if "mysqlimport not found error" by adding path of MySQL Server in Environment Varaible in windows or bashrc in linux.
+Setup the proper path for sql in path if "mysqlimport not found error" by adding path of `MySQL Server` in Environment Varaible in windows or bashrc in linux.
 
 Thea we have to turn on local variable to True as it will by default be set to False
 On mysql terminal write - 
+
+```
 Show Variables Like 'local_infile';
 Set Global local_infile = 1;
+```
 
 on terminal/command prompt write -
 ```
